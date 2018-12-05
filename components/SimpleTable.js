@@ -42,7 +42,7 @@ function SimpleTable(props) {
           <TableRow>
             <TableCell>Address</TableCell>
             <TableCell>External Link</TableCell>
-            <TableCell>Secure?</TableCell>
+            <TableCell>SSL</TableCell>
             <TableCell numeric>Alexa Rank</TableCell>
             <TableCell numeric>Traffic Estimate</TableCell>
             <TableCell numeric>Blogbank Rank</TableCell>
