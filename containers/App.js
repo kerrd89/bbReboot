@@ -11,6 +11,7 @@ export default class App extends Component {
         <div className="main">
           <SearchAppBar />
           <Route exact path="/" component={SimpleTable} />
+          <Route path="/blogs/:id" component={SimpleTable} />
         </div>
       </BrowserRouter>
     );
