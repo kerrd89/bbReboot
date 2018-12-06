@@ -21,9 +21,7 @@ const styles = theme => ({
   },
 });
 
-let id = 0;
 function createData(id, address, isSecure, alexaRank, trafficEstimate, bbRank) {
-  id += 1;
   return { id, address, isSecure, alexaRank, trafficEstimate, bbRank };
 }
 

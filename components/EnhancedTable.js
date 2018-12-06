@@ -62,7 +62,7 @@ class EnhancedTableHead extends React.Component {
     return function (event) {
       this.props.onRequestSort(event, property);
     };
-  };
+  }
 
   render() {
     const { onSelectAllClick, order, orderBy, numSelected, rowCount } = this.props;
@@ -123,13 +123,13 @@ const toolbarStyles = theme => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark,
+      },
   spacer: {
     flex: '1 1 100%',
   },
@@ -151,31 +151,31 @@ let EnhancedTableToolbar = props => {
       })}
     >
       <div className={classes.title}>
-        {numSelected > 0 ? (
+        {numSelected > 0 ? 
           <Typography color="inherit" variant="subtitle1">
             {numSelected} selected
           </Typography>
-        ) : (
+          : 
           <Typography variant="h6" id="tableTitle">
             Blogs - All Categories
           </Typography>
-        )}
+        }
       </div>
       <div className={classes.spacer} />
       <div className={classes.actions}>
-        {numSelected > 0 ? (
+        {numSelected > 0 ? 
           <Tooltip title="Delete">
             <IconButton aria-label="Delete">
               <DeleteIcon />
             </IconButton>
           </Tooltip>
-        ) : (
+          : 
           <Tooltip title="Filter list">
             <IconButton aria-label="Filter list">
               <FilterListIcon />
             </IconButton>
           </Tooltip>
-        )}
+        }
       </div>
     </Toolbar>
   );
@@ -310,11 +310,11 @@ class EnhancedTable extends React.Component {
                     </TableRow>
                   );
                 })}
-              {emptyRows > 0 && (
+              {emptyRows > 0 && 
                 <TableRow style={{ height: 49 * emptyRows }}>
                   <TableCell colSpan={6} />
                 </TableRow>
-              )}
+              }
             </TableBody>
           </Table>
         </div>
