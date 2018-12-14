@@ -69,7 +69,7 @@ function SimpleTable(props) {
 
 SimpleTable.propTypes = {
   classes: PropTypes.object.isRequired,
-  blogs: PropTypes.object.isRequired
+  blogs: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
