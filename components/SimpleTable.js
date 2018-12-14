@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -21,15 +22,6 @@ const styles = theme => ({
   },
 });
 
-function createData(id, address, isSecure, alexaRank, trafficEstimate, bbRank) {
-  return { id, address, isSecure, alexaRank, trafficEstimate, bbRank };
-}
-
-const rows = [
-  createData(1, 'stackchief.com', true, 100000, 20, 1),
-  createData(2, 'prying.io', false, 6600000, 2, 2)
-];
-
 function SimpleTable(props) {
   const { classes } = props;
 
@@ -47,7 +39,7 @@ function SimpleTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => {
+          {props.blogs.map(row => {
             return (
               <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
@@ -77,6 +69,11 @@ function SimpleTable(props) {
 
 SimpleTable.propTypes = {
   classes: PropTypes.object.isRequired,
+  blogs: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(SimpleTable);
+function mapStateToProps(state) {
+  return { blogs: state.blogs };
+}
+
+export default connect(mapStateToProps)(withStyles(styles)(SimpleTable));
